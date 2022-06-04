@@ -45,14 +45,14 @@ function Liste() {
 
 
     return(
-        <div>
+        <div className='appBg'>
+            <h1>Bienvenue sur ton outils de liste de course</h1>
             <h3>De quels aliments as-tu besoin ?</h3>
             <form onSubmit={addItem}>
                 {/* On récupère le contenu du champ pour mettre à jour le state */}
                 <input value={itemName} type="text" onInput={e => changeName(e.target.value)}/>
                 <button type='submit' onClick={handleButton}>+</button>
             </form>
-
             <ul>
                 {/* On va parcourir le tableau d'item et pour chaque iterration on ajoutera un un élément dans la liste des courses en passant en props le nom et l'id de notre element */}
                 {itemListe.map((item) => {
