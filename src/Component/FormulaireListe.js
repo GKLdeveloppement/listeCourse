@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ItemListe from './ItemListe';
+import '../style/formulaireListe.css'
 
 function Liste() {
 
@@ -8,7 +9,6 @@ function Liste() {
     const [itemName, setItemName] = useState('')
 
     const [itemListe, setItemListe] = useState([{}])
-
 
 
     function handleButton() {
@@ -45,20 +45,24 @@ function Liste() {
 
 
     return(
-        <div className='appBg'>
-            <h1>Bienvenue sur ton outils de liste de course</h1>
+        <div className='appMainBg'>
+            <h1>Bienvenue sur TA liste de course</h1>
             <h3>De quels aliments as-tu besoin ?</h3>
             <form onSubmit={addItem}>
                 {/* On récupère le contenu du champ pour mettre à jour le state */}
-                <input value={itemName} type="text" onInput={e => changeName(e.target.value)}/>
-                <button type='submit' onClick={handleButton}>+</button>
+                <input className='inputItem' value={itemName} type="text" onInput={e => changeName(e.target.value)}/>
+                <br />
+                <button className='addBtn' type='submit' onClick={handleButton}>AJOUTER</button>
             </form>
-            <ul>
-                {/* On va parcourir le tableau d'item et pour chaque iterration on ajoutera un un élément dans la liste des courses en passant en props le nom et l'id de notre element */}
-                {itemListe.map((item) => {
+
+            <ul className='itemContainer'>
+                {/* On va parcourir le tableau d'item et pour chaque iterration on ajoutera un élément dans la liste des courses en passant en props le nom et l'id de notre element */}
+                {/* le filter boolean permet de ne rien afficher si l'item est vide cela pour fixer le bug d'affichage de li alors qu'aucun item n'est présent encore */}
+                {itemListe.filter(Boolean).map((item) => {
                     return(
                         <ItemListe  itemName={item.elem} id={item.id} />
                     )
+
                 })}
             </ul>
 

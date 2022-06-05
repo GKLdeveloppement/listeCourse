@@ -1,0 +1,23 @@
+.appMainBg {
+    background-color: #354259;
+    color: white;
+    text-align: center;
+}
+
+.inputItem {
+    border-radius: 10%;
+    background: #CDC2AE;
+    color: black;
+
+}
+
+.addBtn {
+    background-color: #C2DED1;
+    color: black;
+}
+
+.itemContainer {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
