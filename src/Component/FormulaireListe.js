@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ItemListe from './ItemListe';
 import '../style/formulaireListe.css'
 
+
 function Liste() {
 
     const [nbItem, setNbItem] = useState(0)
@@ -45,14 +46,14 @@ function Liste() {
 
 
     return(
-        <div className='appMainBg'>
+        <main className='appMainBg'>
             <h1>Bienvenue sur TA liste de course</h1>
             <h3>De quels aliments as-tu besoin ?</h3>
             <form onSubmit={addItem}>
                 {/* On récupère le contenu du champ pour mettre à jour le state */}
                 <input className='inputItem' value={itemName} type="text" onInput={e => changeName(e.target.value)}/>
                 <br />
-                <button className='addBtn' type='submit' onClick={handleButton}>AJOUTER</button>
+                <button className='btn btn-danger p-2 h-50' type='submit' onClick={handleButton}>Ajouter</button>
             </form>
 
             <ul className='itemContainer'>
@@ -62,11 +63,9 @@ function Liste() {
                     return(
                         <ItemListe  itemName={item.elem} id={item.id} />
                     )
-
                 })}
             </ul>
-
-        </div>
+        </main>
     )
 }
 
