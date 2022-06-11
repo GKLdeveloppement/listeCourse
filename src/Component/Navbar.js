@@ -12,7 +12,7 @@ function HeadNavbar(){
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Ma liste</Nav.Link>
                         <Nav.Link href="#link">Fruits de saison</Nav.Link>
-                        <Nav.Link href="#link">Profil</Nav.Link>
+                        <Nav.Link href="#link2">Profil</Nav.Link>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">

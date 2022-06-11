@@ -9,7 +9,7 @@ function Liste() {
 
     const [itemName, setItemName] = useState('')
 
-    const [itemListe, setItemListe] = useState([{}])
+    const [itemListe, setItemListe] = useState([])
 
 
     function handleButton() {
