@@ -1,14 +1,16 @@
 .appMainBg {
-    background-color: #354259;
+    /* background-color: #85586F; */
     color: white;
     text-align: center;
 }
 
+h1 {
+    padding: 15px;
+}
+
 .inputItem {
-    border-radius: 10%;
     background: #CDC2AE;
     color: black;
-
 }
 
 .addBtn {
