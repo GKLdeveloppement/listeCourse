@@ -1,6 +1,13 @@
 .divItem {
-    background-color: #C2DED1;
-    border : 2px solid grey;
-    margin: 5px;
+    background-color: #DEB6AB;
+    border : 4px solid #F8ECD1;
+    margin: 10px;
     padding: 5px 20px;
+    flex-shrink: 0;
+    min-width: 250px;
+}
+
+.ligneItem {
+    display: flex;
+    align-items: center;
 }

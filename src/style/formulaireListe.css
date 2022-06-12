@@ -19,7 +19,10 @@ h1 {
 }
 
 .itemContainer {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
 }
 
 .btn {
