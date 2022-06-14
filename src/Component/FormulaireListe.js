@@ -23,22 +23,28 @@ function Liste() {
     function addItem(e) {
         e.preventDefault()
 
-        //on récupère le tableau de base dans un nouveau tableau qu'on enverra à ItemListe pour créer les éléments
-        let newListItem = [...itemListe]
+        //faire une vérification du champ avant tout pour ne pas ajouter du vide
+        if (itemName === '') {
+            alert('Le champ ne peux pas être vide');
+            
+        } else {
+            //on récupère le tableau de base dans un nouveau tableau qu'on enverra à ItemListe pour créer les éléments
+            let newListItem = [...itemListe]
 
-        //On instancie notre nouvel élément avec un nom et un id
-        const newItem = {}
-        newItem.elem = itemName
-        newItem.id = nbItem
-        //
-        
-        // alert(newItem.elem);
+            //On instancie notre nouvel élément avec un nom et un id
+            const newItem = {}
+            newItem.elem = itemName
+            newItem.id = nbItem
+            //
 
-        //On ajoute ce nouvelle élément à notre tableau
-        newListItem.push(newItem)
+            // alert(newItem.elem);
 
-        //on met à jour notre state qui contient les items
-        setItemListe(newListItem)
+            //On ajoute ce nouvelle élément à notre tableau
+            newListItem.push(newItem)
+
+            //on met à jour notre state qui contient les items
+            setItemListe(newListItem)
+        }       
 
         //On remet le champ vide pour prochain ajout
         setItemName('')
@@ -53,7 +59,7 @@ function Liste() {
                 {/* On récupère le contenu du champ pour mettre à jour le state */}
                 <input className='inputItem' value={itemName} type="text" onInput={e => changeName(e.target.value)}/>
                 <br />
-                <button className='btn btn-danger p-2 h-50' type='submit' onClick={handleButton}>Ajouter</button>
+                <button className='addBtn' type='submit' onClick={handleButton}></button>
             </form>
 
             <ul className='itemContainer'>

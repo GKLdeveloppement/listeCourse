@@ -13,10 +13,47 @@ h1 {
     color: black;
 }
 
-.addBtn {
-    background-color: #C2DED1;
-    color: black;
-}
+.addBtn{
+    position: relative;
+    margin: 10px;
+    padding: 2px;
+    width: 20%;
+    aspect-ratio: 1/.3;
+    border-radius: 5px;
+    border: none;
+    background: #F8ECD1;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  .addBtn::after{
+    content: 'Ajouter';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .25s ease-in-out;
+
+  }
+  
+  .addBtn::before{
+    content: '✚';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .25s ease-in-out;
+    opacity: 0;
+  }
+  
+  .addBtn:hover::before{
+    opacity: 1;
+  }
+  
+  .addBtn:hover::after{
+    opacity: 0;
+  }
+
 
 .itemContainer {
     display: flex;
