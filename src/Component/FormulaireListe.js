@@ -50,9 +50,9 @@ function Liste() {
         setItemName('')
     }
 
-    function delFunc(id) {
+    function deleteElement(id) {
         //je defini une constante qui contient mon tableau, dans lequel je filtre les éléments
-        const filteredState = dataArr.filter(item => {  
+        const filteredState = itemListe.filter(item => {  
             //je ne laisse que ceux qui sont différents de l'ID de l'élément sur lequel je viens de cliquer
             return item.id !== id;
         })
@@ -60,7 +60,6 @@ function Liste() {
         //en finalité : ça me permet de supprimer un élément du tableau
         setItemListe(filteredState)
     }
-
 
     return(
         <main className='appMainBg'>
