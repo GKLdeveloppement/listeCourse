@@ -50,6 +50,17 @@ function Liste() {
         setItemName('')
     }
 
+    function delFunc(id) {
+        //je defini une constante qui contient mon tableau, dans lequel je filtre les éléments
+        const filteredState = dataArr.filter(item => {  
+            //je ne laisse que ceux qui sont différents de l'ID de l'élément sur lequel je viens de cliquer
+            return item.id !== id;
+        })
+        //Je mets à jour mon tableau avec les données récupéré après ce filtre, donc avec l'élément supprimé en moins
+        //en finalité : ça me permet de supprimer un élément du tableau
+        setItemListe(filteredState)
+    }
+
 
     return(
         <main className='appMainBg'>
@@ -67,7 +78,12 @@ function Liste() {
                 {/* le filter boolean permet de ne rien afficher si l'item est vide cela pour fixer le bug d'affichage de li alors qu'aucun item n'est présent encore */}
                 {itemListe.filter(Boolean).map((item) => {
                     return(
-                        <ItemListe  itemName={item.elem} id={item.id} />
+                        <ItemListe  
+                            itemName={item.elem} 
+                            id={item.id}
+                            //On fait aussi passer une fonction qui permet de nous retourner par la suite l'ID de l'élément séléctionné afin de le supprimer
+                            delFunc={deleteElement}
+                            />
                     )
                 })}
             </ul>
