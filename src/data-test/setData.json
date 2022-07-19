@@ -1,0 +1,21 @@
+{
+    "data": 
+    [
+    {
+        "Nom": "Ail",
+        "Categorie": "legumes",
+        "Mois": "Janvier"
+      },
+      {
+        "Nom": "Betterave",
+        "Categorie": "legumes",
+        "Mois": "Janvier"
+      },
+      {
+        "Nom": "Carotte",
+        "Categorie": "legumes",
+        "Mois": "Janvier"
+      }
+]
+
+}
